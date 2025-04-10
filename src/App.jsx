@@ -28,6 +28,15 @@ function App() {
         />
         <button>Ricerca</button>
       </form>
+
+      <div>
+        {movie.map((item) => (
+          <div>
+            <h3>{item.title}</h3>
+            <p>{item.genre}</p>
+          </div>
+        ))};
+      </div>
     </div>
   );
 }
