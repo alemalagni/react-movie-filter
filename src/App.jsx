@@ -33,7 +33,7 @@ function App() {
       ))
     } else {
       setShowMovie(movie.filter(f =>
-        f.title.includes(filterTitle)
+        f.title.includes(filter)
       ))
       setShowMovie(showMovie.filter(f =>
         f.title.includes(filterTitle)
