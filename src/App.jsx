@@ -31,7 +31,9 @@ function App() {
 
       <div>
         {movie.map((item) => (
-          <div>
+          <div
+            key={item.title}
+          >
             <h3>{item.title}</h3>
             <p>{item.genre}</p>
           </div>
