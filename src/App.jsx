@@ -20,6 +20,7 @@ function App() {
   }
 
   useEffect(() => {
+    console.log("Filtro: " + filter)
     if (filter === "") {
       showMovie = movie;
     } else {
@@ -37,6 +38,7 @@ function App() {
           value={filter}
           onChange={e => setFilter(e.target.value)}
         />
+        <button>Ricerca</button>
       </form>
 
       <div>
