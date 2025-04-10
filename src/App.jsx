@@ -18,6 +18,10 @@ function App() {
     event.preventDefault();
   }
 
+  useEffect(() => {
+    console.log("useEffect evocato")
+  }, [filter])
+
   return (
     <div>
       <form onSubmit={handlerSubmit}>
