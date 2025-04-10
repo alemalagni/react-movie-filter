@@ -21,16 +21,20 @@ function App() {
   }
 
   useEffect(() => {
-    if (filter === "") {
+    if (filter === "" && filterTitle === "") {
       setShowMovie(movie);
-    } else {
+    } else if (filterTitle === "") {
       setShowMovie(movie.filter(f =>
         f.genre.includes(filter)
       ))
-    }
-    if (filterTitle === "") {
-      setShowMovie(showMovie);
+    } else if (filter === "") {
+      setShowMovie(movie.filter(f =>
+        f.title.includes(filterTitle)
+      ))
     } else {
+      setShowMovie(movie.filter(f =>
+        f.title.includes(filterTitle)
+      ))
       setShowMovie(showMovie.filter(f =>
         f.title.includes(filterTitle)
       ))
