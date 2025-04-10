@@ -1,3 +1,5 @@
+import { useState } from 'react';
+import { useEffect } from 'react';
 import './App.css'
 
 const movie = [
@@ -10,8 +12,16 @@ const movie = [
 ];
 
 function App() {
+  const [filter, setFilter] = useState('');
+
+  const handlerSubmit = event => {
+    event.preventDefault();
+  }
+
   return (
-    <div></div>
+    <div>
+
+    </div>
   );
 }
 
