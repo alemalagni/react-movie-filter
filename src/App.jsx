@@ -22,6 +22,10 @@ function App() {
   useEffect(() => {
     if (filter === "") {
       showMovie = movie;
+    } else {
+      showMovie = movie.filter(f =>
+        f.genre.includes(filter)
+      )
     }
   }, [filter])
 
@@ -44,7 +48,7 @@ function App() {
             <h3>{item.title}</h3>
             <p>{item.genre}</p>
           </div>
-        ))};
+        ))}
       </div>
     </div>
   );
