@@ -14,6 +14,7 @@ const movie = [
 function App() {
   const [showMovie, setShowMovie] = useState(movie);
   const [filter, setFilter] = useState('');
+  const [filterTitle, setFilterTitle] = useState('');
 
   const handlerSubmit = event => {
     event.preventDefault();
@@ -27,10 +28,23 @@ function App() {
         f.genre.includes(filter)
       ))
     }
+    if (filterTitle === "") {
+      setShowMovie(showMovie);
+    } else {
+      setShowMovie(showMovie.filter(f =>
+        f.title.includes(filterTitle)
+      ))
+    }
   }, [filter])
 
   return (
     <div>
+      <form>
+        <input
+          type="text"
+          value={filterTitle}
+        />
+      </form>
       <form onSubmit={handlerSubmit}>
         <select value={filter} onChange={e => setFilter(e.target.value)}>
           <option value="">Tutti i film</option>
