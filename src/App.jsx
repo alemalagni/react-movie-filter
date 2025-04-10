@@ -43,6 +43,7 @@ function App() {
         <input
           type="text"
           value={filterTitle}
+          onChange={e => setFilterTitle(e.target.value)}
         />
       </form>
       <form onSubmit={handlerSubmit}>
