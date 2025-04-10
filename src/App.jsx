@@ -35,11 +35,11 @@ function App() {
         f.title.includes(filterTitle)
       ))
     }
-  }, [filter])
+  }, [filter, filterTitle])
 
   return (
     <div>
-      <form>
+      <form onSubmit={handlerSubmit}>
         <input
           type="text"
           value={filterTitle}
