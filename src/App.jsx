@@ -26,7 +26,6 @@ function App() {
       setShowMovie(movie.filter(f =>
         f.genre.includes(filter)
       ))
-      console.log(showMovie)
     }
   }, [filter])
 
