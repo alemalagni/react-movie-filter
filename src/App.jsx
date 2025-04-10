@@ -33,6 +33,7 @@ function App() {
     <div>
       <form onSubmit={handlerSubmit}>
         <select value={filter} onChange={e => setFilter(e.target.value)}>
+          <option value="">Tutti i film</option>
           <option value="Azione">Azione</option>
           <option value="Fantascienza">Fantascienza</option>
           <option value="Thriller">Thriller</option>
