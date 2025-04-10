@@ -32,11 +32,12 @@ function App() {
   return (
     <div>
       <form onSubmit={handlerSubmit}>
-        <input
-          type="text"
-          value={filter}
-          onChange={e => setFilter(e.target.value)}
-        />
+        <select value={filter} onChange={e => setFilter(e.target.value)}>
+          <option value="Azione">Azione</option>
+          <option value="Fantascienza">Fantascienza</option>
+          <option value="Thriller">Thriller</option>
+          <option value="Romantico">Romantico</option>
+        </select>
       </form>
 
       <div>
