@@ -12,6 +12,7 @@ const movie = [
 ];
 
 function App() {
+  let showMovie = movie;
   const [filter, setFilter] = useState('');
 
   const handlerSubmit = event => {
@@ -19,7 +20,9 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("useEffect evocato")
+    if (filter === "") {
+      showMovie = movie;
+    }
   }, [filter])
 
   return (
@@ -34,7 +37,7 @@ function App() {
       </form>
 
       <div>
-        {movie.map((item) => (
+        {showMovie.map((item) => (
           <div
             key={item.title}
           >
