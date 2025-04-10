@@ -12,7 +12,7 @@ const movie = [
 ];
 
 function App() {
-  let showMovie = movie;
+  const [showMovie, setShowMovie] = useState(movie);
   const [filter, setFilter] = useState('');
 
   const handlerSubmit = event => {
@@ -20,13 +20,13 @@ function App() {
   }
 
   useEffect(() => {
-    console.log("Filtro: " + filter)
     if (filter === "") {
-      showMovie = movie;
+      setShowMovie(movie);
     } else {
-      showMovie = movie.filter(f =>
+      setShowMovie(movie.filter(f =>
         f.genre.includes(filter)
-      )
+      ))
+      console.log(showMovie)
     }
   }, [filter])
 
